@@ -1,4 +1,4 @@
-export const COLORS = {
+export const colors = {
   button: {
     primary: {
       text: '#FFF',

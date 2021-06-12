@@ -18,6 +18,7 @@ export interface ButtonProps {
   disabled?: boolean;
   type?: 'button' | 'reset' | 'submit';
   borderRadius?: keyof typeof RADII;
+  children?: React.ReactChild;
 }
 
 export type Ref = HTMLButtonElement;
@@ -42,8 +43,18 @@ const getPropValue = <
   return found ? userProvidedValue : defaultButtonProps[propName];
 };
 
-export const Button: React.FC<ButtonProps> = props => {
-  const { appearance, size, disabled, children, borderRadius = 'none' } = props;
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const Button: React.FC<ButtonProps> = (props) => {
+  const {
+    appearance,
+    size,
+    disabled,
+    children,
+    borderRadius = 'none',
+    ...rest
+  } = props;
   return (
     <StyledButton
       component="button"
@@ -63,6 +74,7 @@ export const Button: React.FC<ButtonProps> = props => {
       }
       disabled={disabled}
       borderRadius={borderRadius}
+      {...rest}
     >
       {children}
     </StyledButton>

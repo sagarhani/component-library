@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Ref = HTMLElement;
+type Ref = React.RefObject<HTMLElement>;
 type Props = {
   children: React.ReactNode;
   component: any;
 };
 
 const Base = React.forwardRef<Ref, Props>(
-  ({ children, component = 'div', ...rest }) => {
+  ({ children, component = 'div', ...rest }, ref) => {
     const Component = component;
-    return <Component {...rest}>{children}</Component>;
+    return (
+      <Component ref={ref} {...rest}>
+        {children}
+      </Component>
+    );
   }
 );
 export const BaseElement = styled(Base)`

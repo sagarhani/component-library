@@ -1,6 +1,11 @@
-import { COLORS } from "./tokens/colors";
-import { SIZES } from "./tokens/sizes";
-import { RADII } from "./tokens/radii";
-import { SPACES } from "./tokens/spaces";
+import { colors } from './tokens/colors';
+import { RADII } from './tokens/radii';
+import { space } from './tokens/spaces';
 
-export { COLORS, SIZES, RADII, SPACES };
+declare module 'styled-components' {
+  export interface DefaultTheme extends ThemeObjType {}
+}
+
+export const theme = { colors, space, RADII };
+
+type ThemeObjType = typeof theme;

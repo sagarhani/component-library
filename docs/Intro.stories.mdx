@@ -1,0 +1,15 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Button, Grid } from '../src';
+import { ThemeProviderWrapper } from '../src/utils';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta title="Intro" />
+
+# React Component Library
+
+<ThemeProviderWrapper>
+  <Grid space="12x">
+    <Button onClick={linkTo('getting-started--page')}>Getting Started</Button>
+    <Button appearance="secondary">Follow on Github</Button>
+  </Grid>
+</ThemeProviderWrapper>
