@@ -13,7 +13,7 @@ const BoxItem = () => {
   return <Box bg="cornflowerblue">Box</Box>;
 };
 
-const Template: Story<ContainerProps> = (args) => (
+const Template: Story<ContainerProps> = args => (
   <Container {...args}>
     <BoxItem />
   </Container>

@@ -16,7 +16,7 @@ const BoxItem = () => {
   );
 };
 
-const Template: Story<GridProps> = (args) => (
+const Template: Story<GridProps> = args => (
   <Grid {...args}>
     <BoxItem />
     <BoxItem />
